@@ -4,185 +4,781 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>EduTech Institute | Home</title>
 
-    <link rel="stylesheet" href="style.css">
+    <style>
 
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        /* =========================
+           RESET & BASIC STYLING
+        ========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --dark: #0B0F19;
+            --dark-blue: #111827;
+            --blue: #2563EB;
+            --cyan: #00D9FF;
+            --white: #FFFFFF;
+            --light: #F8FAFC;
+            --text: #1E293B;
+            --gray: #64748B;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+        /* =========================
+           HEADER / NAVBAR
+        ========================== */
+
+        header {
+            background: var(--dark);
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            color: var(--white);
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: var(--cyan);
+        }
+
+        .logo i {
+            color: var(--cyan);
+            margin-right: 8px;
+        }
+
+        nav {
+            display: flex;
+            gap: 28px;
+        }
+
+        nav a {
+            color: #CBD5E1;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--cyan);
+        }
+
+        .apply-btn {
+            background: var(--blue);
+            color: white;
+            padding: 11px 20px;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .apply-btn:hover {
+            background: var(--cyan);
+            color: var(--dark);
+        }
+
+
+        /* =========================
+           HERO SECTION
+        ========================== */
+
+        .hero {
+            min-height: 580px;
+            padding: 80px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            background: linear-gradient(120deg, #0B0F19, #111827);
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .small-heading {
+            color: var(--cyan);
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            color: white;
+            font-size: 55px;
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            display: block;
+            color: var(--cyan);
+        }
+
+        .hero p {
+            color: #CBD5E1;
+            font-size: 17px;
+            margin-bottom: 30px;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            background: var(--blue);
+            color: white;
+            padding: 14px 25px;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .hero-btn:hover {
+            background: var(--cyan);
+            color: var(--dark);
+            transform: translateY(-3px);
+        }
+
+        .hero-image {
+            width: 450px;
+            height: 350px;
+            border: 2px solid var(--cyan);
+            border-radius: 25px;
+            background: linear-gradient(135deg, #172554, #0F172A);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            box-shadow: 0 0 35px rgba(0, 217, 255, 0.25);
+        }
+
+        .hero-image h2 {
+            color: white;
+            font-size: 32px;
+        }
+
+        .hero-image p {
+            color: var(--cyan);
+            margin-top: 10px;
+        }
+
+        .building-icon {
+            font-size: 80px;
+            color: var(--cyan);
+            margin-bottom: 15px;
+        }
+
+
+        /* =========================
+           GENERAL SECTION
+        ========================== */
+
+        section {
+            padding: 80px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title p {
+            color: var(--blue);
+            font-weight: bold;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            color: var(--dark);
+        }
+
+        .section-title span {
+            color: var(--blue);
+        }
+
+
+        /* =========================
+           FEATURE CARDS
+        ========================== */
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 35px 25px;
+            text-align: center;
+            border-radius: 12px;
+            border-bottom: 4px solid var(--blue);
+            box-shadow: 0 8px 25px rgba(15, 23, 42, 0.08);
+            transition: 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--cyan);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            margin: auto;
+            border-radius: 50%;
+            background: #E0F2FE;
+            color: var(--blue);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+        }
+
+        .feature-card h3 {
+            margin: 20px 0 10px;
+            color: var(--dark);
+        }
+
+        .feature-card p {
+            color: var(--gray);
+        }
+
+
+        /* =========================
+           ABOUT SECTION
+        ========================== */
+
+        .about {
+            background: #E0F2FE;
+            text-align: center;
+        }
+
+        .about-content {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .about-content h2 {
+            font-size: 38px;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .about-content h2 span {
+            color: var(--blue);
+        }
+
+        .about-content p {
+            color: var(--gray);
+            margin-bottom: 15px;
+        }
+
+
+        /* =========================
+           COURSES
+        ========================== */
+
+        .course-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .course-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            border-top: 4px solid var(--blue);
+            box-shadow: 0 8px 25px rgba(15, 23, 42, 0.08);
+            transition: 0.3s;
+        }
+
+        .course-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--cyan);
+        }
+
+        .course-card h3 {
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+
+        .course-card p {
+            color: var(--gray);
+        }
+
+        .course-icon {
+            font-size: 40px;
+            color: var(--blue);
+            margin-bottom: 15px;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 50px 7% 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 50px;
+        }
+
+        footer h3 {
+            color: var(--cyan);
+            margin-bottom: 15px;
+        }
+
+        footer p {
+            color: #94A3B8;
+            margin-bottom: 8px;
+        }
+
+        .footer-links a {
+            display: block;
+            color: #CBD5E1;
+            margin-bottom: 8px;
+        }
+
+        .footer-links a:hover {
+            color: var(--cyan);
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #1E293B;
+            padding-top: 20px;
+            margin-top: 35px;
+            color: #94A3B8;
+        }
+
+
+        /* =========================
+           RESPONSIVE DESIGN
+        ========================== */
+
+        @media (max-width: 900px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-image {
+                width: 100%;
+                max-width: 450px;
+            }
+
+            .features,
+            .course-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .apply-btn {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .features,
+            .course-container,
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title h2 {
+                font-size: 30px;
+            }
+        }
+
+    </style>
 </head>
+
 
 <body>
 
-    <!-- NAVBAR -->
-    <header class="header">
+    <!-- HEADER / NAVIGATION -->
 
-        <a href="index.html" class="logo">
-            <i class="fa-solid fa-graduation-cap"></i>
-            Edu<span>Tech</span>
+    <header>
+
+        <a href="#home" class="logo">
+            🎓 Edu<span>Tech</span>
         </a>
 
-        <nav class="navbar">
-            <a href="index.html" class="active">Home</a>
-            <a href="about.html">About</a>
-            <a href="courses.html">Courses</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="contact.html">Contact</a>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#courses">Courses</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact</a>
         </nav>
 
-        <a href="contact.html" class="nav-btn">Apply Now</a>
+        <a href="#contact" class="apply-btn">
+            Apply Now
+        </a>
 
     </header>
 
 
     <!-- HERO SECTION -->
-    <section class="hero">
 
-        <div class="hero-content">
+    <main>
 
-            <p class="small-title">WELCOME TO EDUTECH INSTITUTE</p>
+        <section class="hero" id="home">
 
-            <h1>
-                Empowering Future
-                <span>Through Education</span>
-            </h1>
+            <div class="hero-content">
 
-            <p>
-                We provide quality education and practical knowledge
-                to build better careers and a brighter future.
-            </p>
+                <p class="small-heading">
+                    WELCOME TO EDUTECH INSTITUTE
+                </p>
 
-            <div class="hero-buttons">
-                <a href="courses.html" class="btn primary-btn">
+                <h1>
+                    Empowering Future
+                    <span>Through Education</span>
+                </h1>
+
+                <p>
+                    We provide quality education and practical knowledge
+                    to build better careers and prepare students for a
+                    successful future.
+                </p>
+
+                <a href="#courses" class="hero-btn">
                     Explore Courses
                 </a>
 
-                <a href="about.html" class="btn outline-btn">
-                    Learn More
-                </a>
             </div>
 
-        </div>
 
-        <div class="hero-image">
+            <div class="hero-image">
 
-            <div class="image-box">
-                <i class="fa-solid fa-building-columns"></i>
+                <div>
 
-                <h2>Modern Learning</h2>
+                    <div class="building-icon">
+                        🏫
+                    </div>
 
-                <p>
-                    Learn. Grow. Achieve.
-                </p>
-            </div>
+                    <h2>
+                        Modern Learning
+                    </h2>
 
-        </div>
+                    <p>
+                        Learn • Grow • Achieve
+                    </p>
 
-    </section>
-
-
-    <!-- FEATURES -->
-    <section class="features section">
-
-        <div class="section-heading">
-            <p>WHY CHOOSE US</p>
-            <h2>Build Your <span>Better Future</span></h2>
-        </div>
-
-        <div class="feature-grid">
-
-            <div class="feature-card">
-
-                <div class="icon">
-                    <i class="fa-solid fa-user-graduate"></i>
                 </div>
 
-                <h3>Expert Faculty</h3>
+            </div>
 
-                <p>
-                    Learn from experienced and professional teachers
-                    with practical knowledge.
-                </p>
+        </section>
+
+
+        <!-- FEATURES SECTION -->
+
+        <section>
+
+            <div class="section-title">
+
+                <p>WHY CHOOSE US</p>
+
+                <h2>
+                    Build Your
+                    <span>Better Future</span>
+                </h2>
 
             </div>
 
 
-            <div class="feature-card">
+            <div class="features">
 
-                <div class="icon">
-                    <i class="fa-solid fa-book-open"></i>
-                </div>
+                <article class="feature-card">
 
-                <h3>Quality Education</h3>
+                    <div class="feature-icon">
+                        🎓
+                    </div>
+
+                    <h3>
+                        Expert Faculty
+                    </h3>
+
+                    <p>
+                        Learn from experienced and professional teachers
+                        with practical knowledge.
+                    </p>
+
+                </article>
+
+
+                <article class="feature-card">
+
+                    <div class="feature-icon">
+                        📚
+                    </div>
+
+                    <h3>
+                        Quality Education
+                    </h3>
+
+                    <p>
+                        Get quality education with modern learning methods
+                        and real-world projects.
+                    </p>
+
+                </article>
+
+
+                <article class="feature-card">
+
+                    <div class="feature-icon">
+                        💼
+                    </div>
+
+                    <h3>
+                        Better Future
+                    </h3>
+
+                    <p>
+                        Develop skills and prepare yourself for a successful
+                        professional career.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ABOUT SECTION -->
+
+        <section class="about" id="about">
+
+            <div class="about-content">
+
+                <p class="small-heading">
+                    ABOUT EDUTECH INSTITUTE
+                </p>
+
+                <h2>
+                    Creating Opportunities Through
+                    <span>Quality Education</span>
+                </h2>
 
                 <p>
-                    Get quality education with modern learning methods
-                    and real-world projects.
+                    EduTech Institute is committed to providing high-quality
+                    education and practical knowledge to students.
+                </p>
+
+                <p>
+                    Our aim is to develop students' skills, confidence and
+                    knowledge so they can successfully achieve their career goals.
                 </p>
 
             </div>
 
+        </section>
 
-            <div class="feature-card">
 
-                <div class="icon">
-                    <i class="fa-solid fa-briefcase"></i>
-                </div>
+        <!-- COURSES SECTION -->
 
-                <h3>Better Future</h3>
+        <section id="courses">
+
+            <div class="section-title">
+
+                <p>LEARN NEW SKILLS</p>
+
+                <h2>
+                    Explore Our
+                    <span>Popular Courses</span>
+                </h2>
+
+            </div>
+
+
+            <div class="course-container">
+
+                <article class="course-card">
+
+                    <div class="course-icon">
+                        💻
+                    </div>
+
+                    <h3>
+                        Web Development
+                    </h3>
+
+                    <p>
+                        Learn HTML, CSS, JavaScript and modern web development
+                        skills.
+                    </p>
+
+                </article>
+
+
+                <article class="course-card">
+
+                    <div class="course-icon">
+                        🗄️
+                    </div>
+
+                    <h3>
+                        Database Management
+                    </h3>
+
+                    <p>
+                        Learn database concepts, SQL and data management.
+                    </p>
+
+                </article>
+
+
+                <article class="course-card">
+
+                    <div class="course-icon">
+                        👨‍💻
+                    </div>
+
+                    <h3>
+                        Programming
+                    </h3>
+
+                    <p>
+                        Learn programming fundamentals and problem-solving skills.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- GALLERY SECTION -->
+
+        <section class="about" id="gallery">
+
+            <div class="section-title">
+
+                <p>OUR CAMPUS</p>
+
+                <h2>
+                    Learning &
+                    <span>Memorable Moments</span>
+                </h2>
+
+            </div>
+
+            <p>
+                🏫 Modern Campus &nbsp;&nbsp;
+                👥 Student Activities &nbsp;&nbsp;
+                💻 Computer Lab &nbsp;&nbsp;
+                🏆 Achievements
+            </p>
+
+        </section>
+
+
+        <!-- CONTACT SECTION -->
+
+        <section id="contact">
+
+            <div class="section-title">
+
+                <p>GET IN TOUCH</p>
+
+                <h2>
+                    Contact
+                    <span>Our Institute</span>
+                </h2>
+
+            </div>
+
+            <div style="text-align: center;">
 
                 <p>
-                    Develop skills and prepare yourself for a successful
-                    professional career.
+                    📍 Ahmedabad, Gujarat, India
+                </p>
+
+                <p>
+                    📞 +91 98765 43210
+                </p>
+
+                <p>
+                    ✉️ info@edutech.com
                 </p>
 
             </div>
 
-        </div>
+        </section>
 
-    </section>
-
-
-    <!-- STATS -->
-    <section class="stats">
-
-        <div class="stat-box">
-            <i class="fa-solid fa-users"></i>
-            <h2>500+</h2>
-            <p>Students</p>
-        </div>
-
-        <div class="stat-box">
-            <i class="fa-solid fa-chalkboard-user"></i>
-            <h2>25+</h2>
-            <p>Expert Faculty</p>
-        </div>
-
-        <div class="stat-box">
-            <i class="fa-solid fa-book"></i>
-            <h2>20+</h2>
-            <p>Courses</p>
-        </div>
-
-        <div class="stat-box">
-            <i class="fa-solid fa-award"></i>
-            <h2>10+</h2>
-            <p>Years Experience</p>
-        </div>
-
-    </section>
+    </main>
 
 
     <!-- FOOTER -->
-    <footer class="footer">
+
+    <footer>
 
         <div class="footer-content">
 
-            <div class="footer-box">
+            <div>
 
-                <a href="index.html" class="logo">
-                    <i class="fa-solid fa-graduation-cap"></i>
-                    Edu<span>Tech</span>
+                <a href="#home" class="logo">
+                    🎓 Edu<span>Tech</span>
                 </a>
 
                 <p>
@@ -193,36 +789,37 @@
             </div>
 
 
-            <div class="footer-box">
+            <div class="footer-links">
 
-                <h3>Quick Links</h3>
+                <h3>
+                    Quick Links
+                </h3>
 
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="courses.html">Courses</a>
-                <a href="gallery.html">Gallery</a>
-                <a href="contact.html">Contact</a>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#courses">Courses</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#contact">Contact</a>
 
             </div>
 
 
-            <div class="footer-box">
+            <div>
 
-                <h3>Contact</h3>
+                <h3>
+                    Contact
+                </h3>
 
                 <p>
-                    <i class="fa-solid fa-location-dot"></i>
                     Ahmedabad, Gujarat
                 </p>
 
                 <p>
-                    <i class="fa-solid fa-phone"></i>
                     +91 98765 43210
                 </p>
 
                 <p>
-                    <i class="fa-solid fa-envelope"></i>
-                    dabhihellyrajendrasinh@gmail.com
+                    info@edutech.com
                 </p>
 
             </div>
@@ -232,9 +829,7 @@
 
         <div class="copyright">
 
-            <p>
-                © 2026 EduTech Institute. All Rights Reserved.
-            </p>
+            © 2026 EduTech Institute. All Rights Reserved.
 
         </div>
 
