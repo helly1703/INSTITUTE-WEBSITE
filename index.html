@@ -2,15 +2,16 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>EduTech Institute | Home</title>
+    <title>EduTech Institute | Learn. Grow. Succeed.</title>
 
     <style>
 
         /* =========================
-           RESET & BASIC STYLING
+           RESET
         ========================== */
 
         * {
@@ -19,90 +20,154 @@
             box-sizing: border-box;
         }
 
-        :root {
-            --dark: #0B0F19;
-            --dark-blue: #111827;
-            --blue: #2563EB;
-            --cyan: #00D9FF;
-            --white: #FFFFFF;
-            --light: #F8FAFC;
-            --text: #1E293B;
-            --gray: #64748B;
-        }
-
         html {
             scroll-behavior: smooth;
         }
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background: var(--light);
-            color: var(--text);
-            line-height: 1.6;
+            background: #f8fafc;
+            color: #111827;
         }
 
         a {
             text-decoration: none;
         }
 
+        ul {
+            list-style: none;
+        }
+
 
         /* =========================
-           HEADER / NAVBAR
+           COLOR VARIABLES
         ========================== */
 
-        header {
-            background: var(--dark);
-            padding: 20px 7%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+        :root {
+
+            --black: #080b12;
+            --dark: #0f172a;
+            --blue: #2563eb;
+            --electric-blue: #3b82f6;
+            --cyan: #00d9ff;
+            --white: #ffffff;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --border: #e2e8f0;
+
         }
+
+
+        /* =========================
+           NAVBAR
+        ========================== */
+
+        .navbar {
+
+            width: 100%;
+
+            padding: 18px 7%;
+
+            background: var(--black);
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+
+        }
+
 
         .logo {
-            color: var(--white);
-            font-size: 25px;
-            font-weight: bold;
+
+            color: white;
+
+            font-size: 24px;
+
+            font-weight: 800;
+
         }
+
 
         .logo span {
+
             color: var(--cyan);
+
         }
 
-        .logo i {
+
+        .logo-icon {
+
             color: var(--cyan);
-            margin-right: 8px;
+
+            margin-right: 7px;
+
         }
 
-        nav {
+
+        .nav-links {
+
             display: flex;
-            gap: 28px;
+
+            align-items: center;
+
+            gap: 30px;
+
         }
 
-        nav a {
-            color: #CBD5E1;
-            font-weight: bold;
+
+        .nav-links a {
+
+            color: #cbd5e1;
+
+            font-size: 15px;
+
+            font-weight: 600;
+
             transition: 0.3s;
+
         }
 
-        nav a:hover {
+
+        .nav-links a:hover,
+
+        .nav-links a.active {
+
             color: var(--cyan);
+
         }
 
-        .apply-btn {
-            background: var(--blue);
-            color: white;
-            padding: 11px 20px;
+
+        .nav-button {
+
+            padding: 11px 22px;
+
             border-radius: 6px;
-            font-weight: bold;
+
+            background: var(--blue);
+
+            color: white !important;
+
             transition: 0.3s;
+
         }
 
-        .apply-btn:hover {
+
+        .nav-button:hover {
+
             background: var(--cyan);
-            color: var(--dark);
+
+            color: var(--black) !important;
+
         }
 
 
@@ -111,194 +176,534 @@
         ========================== */
 
         .hero {
-            min-height: 580px;
+
+            min-height: 650px;
+
             padding: 80px 7%;
-            display: flex;
+
+            display: grid;
+
+            grid-template-columns: 1.1fr 0.9fr;
+
             align-items: center;
-            justify-content: space-between;
-            gap: 50px;
-            background: linear-gradient(120deg, #0B0F19, #111827);
+
+            gap: 60px;
+
+            background:
+
+                linear-gradient(
+
+                    120deg,
+
+                    #080b12 0%,
+
+                    #0f172a 65%,
+
+                    #172554 100%
+
+                );
+
         }
+
 
         .hero-content {
-            max-width: 600px;
+
+            max-width: 650px;
+
         }
 
-        .small-heading {
+
+        .hero-tag {
+
+            display: inline-block;
+
+            padding: 8px 15px;
+
+            border-radius: 30px;
+
             color: var(--cyan);
-            font-size: 14px;
+
+            background: rgba(0, 217, 255, 0.1);
+
+            border: 1px solid rgba(0, 217, 255, 0.4);
+
+            font-size: 13px;
+
             font-weight: bold;
-            letter-spacing: 1px;
-            margin-bottom: 15px;
+
+            margin-bottom: 22px;
+
         }
+
 
         .hero h1 {
+
             color: white;
-            font-size: 55px;
-            line-height: 1.15;
-            margin-bottom: 20px;
+
+            font-size: clamp(42px, 5vw, 68px);
+
+            line-height: 1.08;
+
+            margin-bottom: 25px;
+
         }
+
 
         .hero h1 span {
-            display: block;
+
             color: var(--cyan);
+
         }
 
-        .hero p {
-            color: #CBD5E1;
+
+        .hero-description {
+
+            color: #cbd5e1;
+
             font-size: 17px;
-            margin-bottom: 30px;
+
+            line-height: 1.8;
+
+            max-width: 580px;
+
+            margin-bottom: 32px;
+
         }
 
-        .hero-btn {
-            display: inline-block;
-            background: var(--blue);
-            color: white;
-            padding: 14px 25px;
-            border-radius: 6px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
 
-        .hero-btn:hover {
-            background: var(--cyan);
-            color: var(--dark);
-            transform: translateY(-3px);
-        }
+        .hero-buttons {
 
-        .hero-image {
-            width: 450px;
-            height: 350px;
-            border: 2px solid var(--cyan);
-            border-radius: 25px;
-            background: linear-gradient(135deg, #172554, #0F172A);
             display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            box-shadow: 0 0 35px rgba(0, 217, 255, 0.25);
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+
         }
 
-        .hero-image h2 {
+
+        .primary-button {
+
+            display: inline-block;
+
+            padding: 14px 25px;
+
+            background: var(--blue);
+
             color: white;
-            font-size: 32px;
-        }
 
-        .hero-image p {
-            color: var(--cyan);
-            margin-top: 10px;
-        }
+            border-radius: 7px;
 
-        .building-icon {
-            font-size: 80px;
-            color: var(--cyan);
-            margin-bottom: 15px;
-        }
-
-
-        /* =========================
-           GENERAL SECTION
-        ========================== */
-
-        section {
-            padding: 80px 7%;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 45px;
-        }
-
-        .section-title p {
-            color: var(--blue);
             font-weight: bold;
+
+            transition: 0.3s;
+
         }
 
-        .section-title h2 {
-            font-size: 38px;
+
+        .primary-button:hover {
+
+            background: var(--cyan);
+
+            color: var(--black);
+
+            transform: translateY(-3px);
+
+        }
+
+
+        .secondary-button {
+
+            display: inline-block;
+
+            padding: 13px 25px;
+
+            border: 2px solid var(--cyan);
+
+            color: var(--cyan);
+
+            border-radius: 7px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+
+        }
+
+
+        .secondary-button:hover {
+
+            background: var(--cyan);
+
+            color: var(--black);
+
+        }
+
+
+        /* HERO VISUAL */
+
+        .hero-visual {
+
+            position: relative;
+
+            min-height: 420px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+        }
+
+
+        .main-card {
+
+            width: 360px;
+
+            height: 390px;
+
+            border-radius: 25px;
+
+            background:
+
+                linear-gradient(
+
+                    145deg,
+
+                    #172554,
+
+                    #0f172a
+
+                );
+
+            border: 1px solid rgba(0, 217, 255, 0.5);
+
+            box-shadow:
+
+                0 0 45px rgba(0, 217, 255, 0.2),
+
+                inset 0 0 30px rgba(37, 99, 235, 0.15);
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            text-align: center;
+
+            padding: 30px;
+
+        }
+
+
+        .main-card-icon {
+
+            width: 120px;
+
+            height: 120px;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 60px;
+
+            background: rgba(0, 217, 255, 0.1);
+
+            border: 2px solid var(--cyan);
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .main-card h2 {
+
+            color: white;
+
+            font-size: 28px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .main-card p {
+
+            color: var(--cyan);
+
+        }
+
+
+        .floating-card {
+
+            position: absolute;
+
+            padding: 16px 20px;
+
+            background: white;
+
+            border-radius: 12px;
+
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+        }
+
+
+        .floating-card strong {
+
+            display: block;
+
             color: var(--dark);
+
         }
 
-        .section-title span {
-            color: var(--blue);
+
+        .floating-card small {
+
+            color: var(--gray);
+
+        }
+
+
+        .floating-icon {
+
+            font-size: 25px;
+
+        }
+
+
+        .card-one {
+
+            top: 30px;
+
+            left: 0;
+
+        }
+
+
+        .card-two {
+
+            right: 0;
+
+            bottom: 35px;
+
         }
 
 
         /* =========================
-           FEATURE CARDS
+           STATS
         ========================== */
 
-        .features {
+        .stats {
+
+            background: white;
+
+            padding: 35px 7%;
+
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+
+            grid-template-columns: repeat(4, 1fr);
+
             gap: 25px;
+
+            border-bottom: 1px solid var(--border);
+
         }
+
+
+        .stat-item {
+
+            text-align: center;
+
+            padding: 15px;
+
+        }
+
+
+        .stat-number {
+
+            color: var(--blue);
+
+            font-size: 35px;
+
+            font-weight: 800;
+
+        }
+
+
+        .stat-label {
+
+            color: var(--gray);
+
+            margin-top: 5px;
+
+        }
+
+
+        /* =========================
+           COMMON SECTION
+        ========================== */
+
+        .section {
+
+            padding: 90px 7%;
+
+        }
+
+
+        .section-header {
+
+            text-align: center;
+
+            max-width: 650px;
+
+            margin: 0 auto 50px;
+
+        }
+
+
+        .section-label {
+
+            color: var(--blue);
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            letter-spacing: 1px;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .section-header h2 {
+
+            color: var(--dark);
+
+            font-size: 40px;
+
+            line-height: 1.2;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .section-header h2 span {
+
+            color: var(--blue);
+
+        }
+
+
+        .section-header p {
+
+            color: var(--gray);
+
+            line-height: 1.7;
+
+        }
+
+
+        /* =========================
+           WHY CHOOSE US
+        ========================== */
+
+        .features-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+
+        }
+
 
         .feature-card {
+
+            padding: 35px 28px;
+
             background: white;
-            padding: 35px 25px;
-            text-align: center;
-            border-radius: 12px;
-            border-bottom: 4px solid var(--blue);
-            box-shadow: 0 8px 25px rgba(15, 23, 42, 0.08);
+
+            border: 1px solid var(--border);
+
+            border-radius: 15px;
+
             transition: 0.3s;
+
         }
+
 
         .feature-card:hover {
-            transform: translateY(-10px);
+
+            transform: translateY(-8px);
+
             border-color: var(--cyan);
+
+            box-shadow: 0 15px 30px rgba(37, 99, 235, 0.1);
+
         }
+
 
         .feature-icon {
-            width: 70px;
-            height: 70px;
-            margin: auto;
-            border-radius: 50%;
-            background: #E0F2FE;
-            color: var(--blue);
+
+            width: 65px;
+
+            height: 65px;
+
             display: flex;
+
             justify-content: center;
+
             align-items: center;
+
+            border-radius: 12px;
+
+            color: var(--blue);
+
+            background: #eff6ff;
+
             font-size: 30px;
+
+            margin-bottom: 22px;
+
         }
+
 
         .feature-card h3 {
-            margin: 20px 0 10px;
+
             color: var(--dark);
+
+            font-size: 21px;
+
+            margin-bottom: 12px;
+
         }
+
 
         .feature-card p {
+
             color: var(--gray);
-        }
 
+            line-height: 1.7;
 
-        /* =========================
-           ABOUT SECTION
-        ========================== */
-
-        .about {
-            background: #E0F2FE;
-            text-align: center;
-        }
-
-        .about-content {
-            max-width: 850px;
-            margin: auto;
-        }
-
-        .about-content h2 {
-            font-size: 38px;
-            margin-bottom: 20px;
-            color: var(--dark);
-        }
-
-        .about-content h2 span {
-            color: var(--blue);
-        }
-
-        .about-content p {
-            color: var(--gray);
-            margin-bottom: 15px;
         }
 
 
@@ -306,39 +711,352 @@
            COURSES
         ========================== */
 
-        .course-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
+        .courses-section {
+
+            background: #f1f5f9;
+
         }
+
+
+        .courses-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+
+        }
+
 
         .course-card {
+
             background: white;
-            padding: 30px;
-            border-radius: 12px;
-            border-top: 4px solid var(--blue);
-            box-shadow: 0 8px 25px rgba(15, 23, 42, 0.08);
+
+            border-radius: 15px;
+
+            overflow: hidden;
+
+            border: 1px solid var(--border);
+
             transition: 0.3s;
+
         }
+
 
         .course-card:hover {
+
             transform: translateY(-8px);
-            border-color: var(--cyan);
+
+            box-shadow: 0 15px 30px rgba(15, 23, 42, 0.12);
+
         }
 
-        .course-card h3 {
+
+        .course-image {
+
+            height: 190px;
+
+            background:
+
+                linear-gradient(
+
+                    135deg,
+
+                    #0f172a,
+
+                    #1d4ed8
+
+                );
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            font-size: 65px;
+
+            color: var(--cyan);
+
+        }
+
+
+        .course-content {
+
+            padding: 25px;
+
+        }
+
+
+        .course-content h3 {
+
             color: var(--dark);
+
+            font-size: 21px;
+
             margin-bottom: 10px;
+
         }
 
-        .course-card p {
+
+        .course-content p {
+
             color: var(--gray);
+
+            line-height: 1.6;
+
+            margin-bottom: 20px;
+
         }
 
-        .course-icon {
-            font-size: 40px;
+
+        .course-info {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            padding-top: 15px;
+
+            border-top: 1px solid var(--border);
+
+            color: var(--gray);
+
+            font-size: 14px;
+
+        }
+
+
+        .course-link {
+
+            display: inline-block;
+
+            margin-top: 18px;
+
             color: var(--blue);
-            margin-bottom: 15px;
+
+            font-weight: bold;
+
+        }
+
+
+        .course-link:hover {
+
+            color: var(--cyan);
+
+        }
+
+
+        /* =========================
+           ABOUT SECTION
+        ========================== */
+
+        .about-section {
+
+            display: grid;
+
+            grid-template-columns: 0.9fr 1.1fr;
+
+            gap: 70px;
+
+            align-items: center;
+
+        }
+
+
+        .about-visual {
+
+            min-height: 400px;
+
+            border-radius: 20px;
+
+            background:
+
+                linear-gradient(
+
+                    145deg,
+
+                    #080b12,
+
+                    #172554
+
+                );
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            position: relative;
+
+            overflow: hidden;
+
+        }
+
+
+        .about-visual::before {
+
+            content: "";
+
+            width: 250px;
+
+            height: 250px;
+
+            border: 2px solid var(--cyan);
+
+            border-radius: 50%;
+
+            position: absolute;
+
+        }
+
+
+        .about-visual::after {
+
+            content: "";
+
+            width: 170px;
+
+            height: 170px;
+
+            border: 2px solid var(--blue);
+
+            border-radius: 50%;
+
+            position: absolute;
+
+        }
+
+
+        .about-symbol {
+
+            position: relative;
+
+            z-index: 2;
+
+            font-size: 80px;
+
+        }
+
+
+        .about-content h2 {
+
+            color: var(--dark);
+
+            font-size: 42px;
+
+            line-height: 1.2;
+
+            margin: 12px 0 20px;
+
+        }
+
+
+        .about-content h2 span {
+
+            color: var(--blue);
+
+        }
+
+
+        .about-content > p {
+
+            color: var(--gray);
+
+            line-height: 1.8;
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .check-list {
+
+            margin: 25px 0;
+
+        }
+
+
+        .check-list li {
+
+            margin: 12px 0;
+
+            color: var(--dark);
+
+            font-weight: 600;
+
+        }
+
+
+        .check-list li::before {
+
+            content: "✓";
+
+            color: var(--cyan);
+
+            background: var(--blue);
+
+            border-radius: 50%;
+
+            padding: 2px 6px;
+
+            margin-right: 10px;
+
+        }
+
+
+        /* =========================
+           CTA
+        ========================== */
+
+        .cta {
+
+            margin: 0 7% 90px;
+
+            padding: 70px 8%;
+
+            border-radius: 20px;
+
+            background:
+
+                linear-gradient(
+
+                    120deg,
+
+                    #080b12,
+
+                    #172554
+
+                );
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 30px;
+
+        }
+
+
+        .cta h2 {
+
+            color: white;
+
+            font-size: 38px;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .cta p {
+
+            color: #cbd5e1;
+
         }
 
 
@@ -347,43 +1065,118 @@
         ========================== */
 
         footer {
-            background: var(--dark);
+
+            background: var(--black);
+
             color: white;
-            padding: 50px 7% 20px;
+
+            padding: 65px 7% 20px;
+
         }
 
-        .footer-content {
+
+        .footer-grid {
+
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 50px;
+
+            grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+
+            gap: 45px;
+
         }
 
-        footer h3 {
+
+        .footer-column h3 {
+
             color: var(--cyan);
-            margin-bottom: 15px;
+
+            margin-bottom: 20px;
+
         }
 
-        footer p {
-            color: #94A3B8;
-            margin-bottom: 8px;
+
+        .footer-column p {
+
+            color: #94a3b8;
+
+            line-height: 1.7;
+
         }
 
-        .footer-links a {
+
+        .footer-column a {
+
             display: block;
-            color: #CBD5E1;
-            margin-bottom: 8px;
+
+            color: #cbd5e1;
+
+            margin: 10px 0;
+
+            transition: 0.3s;
+
         }
 
-        .footer-links a:hover {
+
+        .footer-column a:hover {
+
             color: var(--cyan);
+
         }
+
+
+        .newsletter {
+
+            display: flex;
+
+            margin-top: 15px;
+
+        }
+
+
+        .newsletter input {
+
+            width: 100%;
+
+            padding: 12px;
+
+            border: none;
+
+            outline: none;
+
+            border-radius: 5px 0 0 5px;
+
+        }
+
+
+        .newsletter button {
+
+            border: none;
+
+            padding: 0 17px;
+
+            background: var(--blue);
+
+            color: white;
+
+            cursor: pointer;
+
+            border-radius: 0 5px 5px 0;
+
+        }
+
 
         .copyright {
+
             text-align: center;
-            border-top: 1px solid #1E293B;
+
+            color: #64748b;
+
+            border-top: 1px solid #1e293b;
+
+            margin-top: 45px;
+
             padding-top: 20px;
-            margin-top: 35px;
-            color: #94A3B8;
+
         }
 
 
@@ -391,91 +1184,235 @@
            RESPONSIVE DESIGN
         ========================== */
 
-        @media (max-width: 900px) {
-
-            header {
-                flex-direction: column;
-                gap: 15px;
-            }
+        @media (max-width: 1000px) {
 
             .hero {
-                flex-direction: column;
+
+                grid-template-columns: 1fr;
+
                 text-align: center;
+
             }
 
-            .hero-image {
-                width: 100%;
-                max-width: 450px;
+
+            .hero-content {
+
+                margin: auto;
+
             }
 
-            .features,
-            .course-container {
+
+            .hero-buttons {
+
+                justify-content: center;
+
+            }
+
+
+            .hero-visual {
+
+                margin-top: 30px;
+
+            }
+
+
+            .features-grid,
+
+            .courses-grid {
+
                 grid-template-columns: repeat(2, 1fr);
+
             }
 
-            .footer-content {
-                grid-template-columns: 1fr 1fr;
+
+            .about-section {
+
+                grid-template-columns: 1fr;
+
             }
+
+
+            .about-visual {
+
+                max-width: 600px;
+
+                width: 100%;
+
+                margin: auto;
+
+            }
+
+
+            .footer-grid {
+
+                grid-template-columns: repeat(2, 1fr);
+
+            }
+
         }
 
 
-        @media (max-width: 600px) {
+        @media (max-width: 700px) {
 
-            nav {
-                flex-wrap: wrap;
-                justify-content: center;
+            .navbar {
+
+                flex-direction: column;
+
                 gap: 15px;
+
             }
 
-            .apply-btn {
-                display: none;
+
+            .nav-links {
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+
+                gap: 15px;
+
             }
+
+
+            .stats {
+
+                grid-template-columns: repeat(2, 1fr);
+
+            }
+
+
+            .features-grid,
+
+            .courses-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .main-card {
+
+                width: 290px;
+
+                height: 350px;
+
+            }
+
+
+            .floating-card {
+
+                display: none;
+
+            }
+
+
+            .section-header h2,
+
+            .about-content h2 {
+
+                font-size: 32px;
+
+            }
+
+
+            .cta {
+
+                flex-direction: column;
+
+                text-align: center;
+
+                margin: 0 5% 60px;
+
+            }
+
+
+            .footer-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+        }
+
+
+        @media (max-width: 450px) {
+
+            .stats {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .hero {
+
+                padding: 60px 5%;
+
+            }
+
+
+            .section {
+
+                padding: 65px 5%;
+
+            }
+
 
             .hero h1 {
-                font-size: 38px;
+
+                font-size: 40px;
+
             }
 
-            .features,
-            .course-container,
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
-
-            .section-title h2 {
-                font-size: 30px;
-            }
         }
 
     </style>
+
 </head>
 
 
 <body>
 
-    <!-- HEADER / NAVIGATION -->
 
-    <header>
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <header class="navbar">
 
         <a href="#home" class="logo">
-            🎓 Edu<span>Tech</span>
+
+            <span class="logo-icon">◆</span>
+
+            Edu<span>Tech</span>
+
         </a>
 
-        <nav>
-            <a href="#home">Home</a>
+
+        <nav class="nav-links">
+
+            <a href="#home" class="active">Home</a>
+
             <a href="#about">About</a>
-            <a href="#courses">Courses</a>
-            <a href="#gallery">Gallery</a>
-            <a href="#contact">Contact</a>
-        </nav>
 
-        <a href="#contact" class="apply-btn">
-            Apply Now
-        </a>
+            <a href="#courses">Courses</a>
+
+            <a href="#why-us">Why Us</a>
+
+            <a href="#contact">Contact</a>
+
+            <a href="#contact" class="nav-button">
+                Apply Now
+            </a>
+
+        </nav>
 
     </header>
 
 
-    <!-- HERO SECTION -->
+    <!-- =========================
+         HERO SECTION
+    ========================== -->
 
     <main>
 
@@ -483,43 +1420,107 @@
 
             <div class="hero-content">
 
-                <p class="small-heading">
-                    WELCOME TO EDUTECH INSTITUTE
-                </p>
+                <span class="hero-tag">
+                    🚀 START YOUR JOURNEY TODAY
+                </span>
+
 
                 <h1>
-                    Empowering Future
-                    <span>Through Education</span>
+
+                    Learn Today.
+
+                    <span>Lead Tomorrow.</span>
+
                 </h1>
 
-                <p>
-                    We provide quality education and practical knowledge
-                    to build better careers and prepare students for a
-                    successful future.
+
+                <p class="hero-description">
+
+                    Build the skills, confidence, and knowledge you need
+                    to create a successful future. Learn from experienced
+                    instructors and transform your potential into progress.
+
                 </p>
 
-                <a href="#courses" class="hero-btn">
-                    Explore Courses
-                </a>
+
+                <div class="hero-buttons">
+
+                    <a href="#courses" class="primary-button">
+                        Explore Courses →
+                    </a>
+
+
+                    <a href="#about" class="secondary-button">
+                        Learn More
+                    </a>
+
+                </div>
 
             </div>
 
 
-            <div class="hero-image">
+            <div class="hero-visual">
 
-                <div>
 
-                    <div class="building-icon">
-                        🏫
+                <div class="main-card">
+
+                    <div class="main-card-icon">
+                        🎓
                     </div>
 
+
                     <h2>
-                        Modern Learning
+                        Learn. Grow. Succeed.
                     </h2>
 
+
                     <p>
-                        Learn • Grow • Achieve
+                        Your Future Starts Here
                     </p>
+
+                </div>
+
+
+                <div class="floating-card card-one">
+
+                    <div class="floating-icon">
+                        👨‍🎓
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            5,000+
+                        </strong>
+
+                        <small>
+                            Students Trained
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="floating-card card-two">
+
+                    <div class="floating-icon">
+                        ⭐
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            98%
+                        </strong>
+
+                        <small>
+                            Success Rate
+                        </small>
+
+                    </div>
 
                 </div>
 
@@ -528,23 +1529,100 @@
         </section>
 
 
-        <!-- FEATURES SECTION -->
+        <!-- =========================
+             STATS
+        ========================== -->
 
-        <section>
+        <section class="stats">
 
-            <div class="section-title">
+            <div class="stat-item">
 
-                <p>WHY CHOOSE US</p>
+                <div class="stat-number">
+                    5K+
+                </div>
 
-                <h2>
-                    Build Your
-                    <span>Better Future</span>
-                </h2>
+                <div class="stat-label">
+                    Students Trained
+                </div>
 
             </div>
 
 
-            <div class="features">
+            <div class="stat-item">
+
+                <div class="stat-number">
+                    25+
+                </div>
+
+                <div class="stat-label">
+                    Expert Instructors
+                </div>
+
+            </div>
+
+
+            <div class="stat-item">
+
+                <div class="stat-number">
+                    15+
+                </div>
+
+                <div class="stat-label">
+                    Courses Offered
+                </div>
+
+            </div>
+
+
+            <div class="stat-item">
+
+                <div class="stat-number">
+                    98%
+                </div>
+
+                <div class="stat-label">
+                    Student Success
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             WHY CHOOSE US
+        ========================== -->
+
+        <section class="section" id="why-us">
+
+            <div class="section-header">
+
+                <div class="section-label">
+                    WHY CHOOSE US
+                </div>
+
+
+                <h2>
+
+                    More Than Education.
+
+                    <span>A Complete Experience.</span>
+
+                </h2>
+
+
+                <p>
+
+                    We help students develop practical skills and
+                    confidence to achieve their career goals.
+
+                </p>
+
+            </div>
+
+
+            <div class="features-grid">
+
 
                 <article class="feature-card">
 
@@ -552,13 +1630,17 @@
                         🎓
                     </div>
 
+
                     <h3>
                         Expert Faculty
                     </h3>
 
+
                     <p>
-                        Learn from experienced and professional teachers
-                        with practical knowledge.
+
+                        Learn from experienced professionals who
+                        provide practical knowledge and guidance.
+
                     </p>
 
                 </article>
@@ -567,139 +1649,217 @@
                 <article class="feature-card">
 
                     <div class="feature-icon">
-                        📚
-                    </div>
-
-                    <h3>
-                        Quality Education
-                    </h3>
-
-                    <p>
-                        Get quality education with modern learning methods
-                        and real-world projects.
-                    </p>
-
-                </article>
-
-
-                <article class="feature-card">
-
-                    <div class="feature-icon">
-                        💼
-                    </div>
-
-                    <h3>
-                        Better Future
-                    </h3>
-
-                    <p>
-                        Develop skills and prepare yourself for a successful
-                        professional career.
-                    </p>
-
-                </article>
-
-            </div>
-
-        </section>
-
-
-        <!-- ABOUT SECTION -->
-
-        <section class="about" id="about">
-
-            <div class="about-content">
-
-                <p class="small-heading">
-                    ABOUT EDUTECH INSTITUTE
-                </p>
-
-                <h2>
-                    Creating Opportunities Through
-                    <span>Quality Education</span>
-                </h2>
-
-                <p>
-                    EduTech Institute is committed to providing high-quality
-                    education and practical knowledge to students.
-                </p>
-
-                <p>
-                    Our aim is to develop students' skills, confidence and
-                    knowledge so they can successfully achieve their career goals.
-                </p>
-
-            </div>
-
-        </section>
-
-
-        <!-- COURSES SECTION -->
-
-        <section id="courses">
-
-            <div class="section-title">
-
-                <p>LEARN NEW SKILLS</p>
-
-                <h2>
-                    Explore Our
-                    <span>Popular Courses</span>
-                </h2>
-
-            </div>
-
-
-            <div class="course-container">
-
-                <article class="course-card">
-
-                    <div class="course-icon">
                         💻
                     </div>
 
+
                     <h3>
-                        Web Development
+                        Practical Learning
                     </h3>
 
+
                     <p>
-                        Learn HTML, CSS, JavaScript and modern web development
-                        skills.
+
+                        Gain real-world experience through projects,
+                        activities and practical learning.
+
                     </p>
 
                 </article>
 
 
-                <article class="course-card">
+                <article class="feature-card">
 
-                    <div class="course-icon">
-                        🗄️
+                    <div class="feature-icon">
+                        🚀
                     </div>
 
+
                     <h3>
-                        Database Management
+                        Career Growth
                     </h3>
 
+
                     <p>
-                        Learn database concepts, SQL and data management.
+
+                        Build the skills and confidence needed for
+                        your professional success.
+
                     </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             COURSES
+        ========================== -->
+
+        <section class="section courses-section" id="courses">
+
+            <div class="section-header">
+
+                <div class="section-label">
+                    POPULAR PROGRAMS
+                </div>
+
+
+                <h2>
+
+                    Learn Skills That
+
+                    <span>Make a Difference.</span>
+
+                </h2>
+
+
+                <p>
+
+                    Choose from our popular programs designed to
+                    prepare you for the future.
+
+                </p>
+
+            </div>
+
+
+            <div class="courses-grid">
+
+
+                <article class="course-card">
+
+                    <div class="course-image">
+                        💻
+                    </div>
+
+
+                    <div class="course-content">
+
+                        <h3>
+                            Web Development
+                        </h3>
+
+
+                        <p>
+
+                            Learn HTML, CSS, JavaScript and create
+                            modern responsive websites.
+
+                        </p>
+
+
+                        <div class="course-info">
+
+                            <span>
+                                ⏱ 6 Months
+                            </span>
+
+
+                            <span>
+                                ⭐ Beginner
+                            </span>
+
+                        </div>
+
+
+                        <a href="#contact" class="course-link">
+                            View Details →
+                        </a>
+
+                    </div>
 
                 </article>
 
 
                 <article class="course-card">
 
-                    <div class="course-icon">
+                    <div class="course-image">
                         👨‍💻
                     </div>
 
-                    <h3>
-                        Programming
-                    </h3>
 
-                    <p>
-                        Learn programming fundamentals and problem-solving skills.
-                    </p>
+                    <div class="course-content">
+
+                        <h3>
+                            Programming
+                        </h3>
+
+
+                        <p>
+
+                            Develop programming skills and learn
+                            problem-solving techniques.
+
+                        </p>
+
+
+                        <div class="course-info">
+
+                            <span>
+                                ⏱ 6 Months
+                            </span>
+
+
+                            <span>
+                                ⭐ Intermediate
+                            </span>
+
+                        </div>
+
+
+                        <a href="#contact" class="course-link">
+                            View Details →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <article class="course-card">
+
+                    <div class="course-image">
+                        📊
+                    </div>
+
+
+                    <div class="course-content">
+
+                        <h3>
+                            Digital Marketing
+                        </h3>
+
+
+                        <p>
+
+                            Learn SEO, social media and digital
+                            marketing strategies.
+
+                        </p>
+
+
+                        <div class="course-info">
+
+                            <span>
+                                ⏱ 3 Months
+                            </span>
+
+
+                            <span>
+                                ⭐ Beginner
+                            </span>
+
+                        </div>
+
+
+                        <a href="#contact" class="course-link">
+                            View Details →
+                        </a>
+
+                    </div>
 
                 </article>
 
@@ -708,119 +1868,239 @@
         </section>
 
 
-        <!-- GALLERY SECTION -->
+        <!-- =========================
+             ABOUT
+        ========================== -->
 
-        <section class="about" id="gallery">
+        <section class="section about-section" id="about">
 
-            <div class="section-title">
 
-                <p>OUR CAMPUS</p>
+            <div class="about-visual">
 
-                <h2>
-                    Learning &
-                    <span>Memorable Moments</span>
-                </h2>
+                <div class="about-symbol">
+                    🏫
+                </div>
 
             </div>
 
-            <p>
-                🏫 Modern Campus &nbsp;&nbsp;
-                👥 Student Activities &nbsp;&nbsp;
-                💻 Computer Lab &nbsp;&nbsp;
-                🏆 Achievements
-            </p>
+
+            <div class="about-content">
+
+                <div class="section-label">
+                    ABOUT EDUTECH INSTITUTE
+                </div>
+
+
+                <h2>
+
+                    Education That
+
+                    <span>Opens Doors.</span>
+
+                </h2>
+
+
+                <p>
+
+                    EduTech Institute is dedicated to providing
+                    high-quality education and practical skills
+                    that prepare students for the future.
+
+                </p>
+
+
+                <p>
+
+                    Our mission is to create a learning environment
+                    where every student can learn, grow and achieve
+                    their goals.
+
+                </p>
+
+
+                <ul class="check-list">
+
+                    <li>
+                        Industry-focused learning
+                    </li>
+
+
+                    <li>
+                        Experienced instructors
+                    </li>
+
+
+                    <li>
+                        Practical projects
+                    </li>
+
+
+                    <li>
+                        Career guidance
+                    </li>
+
+                </ul>
+
+
+                <a href="#contact" class="primary-button">
+                    Discover More →
+                </a>
+
+            </div>
 
         </section>
 
 
-        <!-- CONTACT SECTION -->
+        <!-- =========================
+             CTA
+        ========================== -->
 
-        <section id="contact">
+        <section class="cta" id="contact">
 
-            <div class="section-title">
-
-                <p>GET IN TOUCH</p>
+            <div>
 
                 <h2>
-                    Contact
-                    <span>Our Institute</span>
+                    Ready to Build Your Future?
                 </h2>
 
-            </div>
-
-            <div style="text-align: center;">
 
                 <p>
-                    📍 Ahmedabad, Gujarat, India
-                </p>
 
-                <p>
-                    📞 +91 98765 43210
-                </p>
+                    Start your learning journey today and take
+                    the next step toward your goals.
 
-                <p>
-                    ✉️ info@edutech.com
                 </p>
 
             </div>
+
+
+            <a href="mailto:info@edutech.com" class="primary-button">
+
+                Get Started →
+
+            </a>
 
         </section>
 
     </main>
 
 
-    <!-- FOOTER -->
+    <!-- =========================
+         FOOTER
+    ========================== -->
 
     <footer>
 
-        <div class="footer-content">
+        <div class="footer-grid">
 
-            <div>
+
+            <div class="footer-column">
 
                 <a href="#home" class="logo">
-                    🎓 Edu<span>Tech</span>
+
+                    <span class="logo-icon">◆</span>
+
+                    Edu<span>Tech</span>
+
                 </a>
 
-                <p>
-                    Empowering students with quality education,
-                    skills and knowledge for a better future.
+
+                <p style="margin-top: 18px;">
+
+                    Empowering students with knowledge,
+                    skills and confidence for a better future.
+
                 </p>
 
             </div>
 
 
-            <div class="footer-links">
+            <div class="footer-column">
 
                 <h3>
                     Quick Links
                 </h3>
 
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#courses">Courses</a>
-                <a href="#gallery">Gallery</a>
-                <a href="#contact">Contact</a>
+
+                <a href="#home">
+                    Home
+                </a>
+
+
+                <a href="#about">
+                    About Us
+                </a>
+
+
+                <a href="#courses">
+                    Courses
+                </a>
+
+
+                <a href="#why-us">
+                    Why Choose Us
+                </a>
 
             </div>
 
 
-            <div>
+            <div class="footer-column">
 
                 <h3>
-                    Contact
+                    Programs
                 </h3>
 
-                <p>
-                    Ahmedabad, Gujarat
-                </p>
+
+                <a href="#courses">
+                    Web Development
+                </a>
+
+
+                <a href="#courses">
+                    Programming
+                </a>
+
+
+                <a href="#courses">
+                    Digital Marketing
+                </a>
+
+
+                <a href="#courses">
+                    Career Courses
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Stay Updated
+                </h3>
+
 
                 <p>
-                    +91 98765 43210
+
+                    Subscribe for latest updates,
+                    courses and announcements.
+
                 </p>
 
-                <p>
-                    info@edutech.com
-                </p>
+
+                <div class="newsletter">
+
+                    <input
+                        type="email"
+                        placeholder="Your email"
+                    >
+
+
+                    <button>
+                        →
+                    </button>
+
+                </div>
 
             </div>
 
@@ -834,6 +2114,7 @@
         </div>
 
     </footer>
+
 
 </body>
 
