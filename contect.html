@@ -1,83 +1,211 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 
 <head>
 
-<title>Contact</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="css/style.css">
+    <title>EduTech Institute | Contact</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 </head>
-
 
 <body>
 
 
-<header>
+    <!-- NAVBAR -->
 
-<h2>EduTech Institute</h2>
+    <header class="header">
 
+        <a href="index.html" class="logo">
+            <i class="fa-solid fa-graduation-cap"></i>
+            Edu<span>Tech</span>
+        </a>
 
-<nav>
+        <nav class="navbar">
 
-<a href="index.html">Home</a>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="courses.html">Courses</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html" class="active">Contact</a>
 
-<a href="about.html">About</a>
+        </nav>
 
-<a href="courses.html">Courses</a>
+        <a href="contact.html" class="nav-btn">Apply Now</a>
 
-<a href="contact.html">Contact</a>
-
-</nav>
-
-
-</header>
-
-
-
-
-<section class="page">
+    </header>
 
 
-<h1>Contact Us</h1>
+    <!-- BANNER -->
+
+    <section class="page-banner">
+
+        <h1>Contact <span>Us</span></h1>
+
+        <p>
+            Home / Contact
+        </p>
+
+    </section>
 
 
-<form>
+    <!-- CONTACT -->
+
+    <section class="contact section">
+
+        <div class="contact-info">
+
+            <p class="small-title">
+                GET IN TOUCH
+            </p>
+
+            <h2>
+                We Would Love To
+                <span>Hear From You</span>
+            </h2>
+
+            <p>
+                Have questions about our courses or admission?
+                Contact us today and our team will help you.
+            </p>
 
 
-<input type="text" placeholder="Your Name">
+            <div class="contact-box">
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                <div>
+
+                    <h3>Address</h3>
+
+                    <p>
+                        Ahmedabad, Gujarat, India
+                    </p>
+
+                </div>
+
+            </div>
 
 
-<input type="email" placeholder="Email">
+            <div class="contact-box">
+
+                <i class="fa-solid fa-phone"></i>
+
+                <div>
+
+                    <h3>Phone</h3>
+
+                    <p>
+                        +91 98765 43210
+                    </p>
+
+                </div>
+
+            </div>
 
 
-<textarea placeholder="Your Message"></textarea>
+            <div class="contact-box">
+
+                <i class="fa-solid fa-envelope"></i>
+
+                <div>
+
+                    <h3>Email</h3>
+
+                    <p>
+                        info@edutech.com
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
 
 
-<button>
-Submit
-</button>
+        <div class="contact-form">
+
+            <form>
+
+                <input type="text" placeholder="Your Name" required>
+
+                <input type="email" placeholder="Your Email" required>
+
+                <input type="tel" placeholder="Your Phone Number" required>
+
+                <select required>
+
+                    <option value="">Select Course</option>
+
+                    <option>Web Development</option>
+
+                    <option>Programming</option>
+
+                    <option>Database Management</option>
+
+                    <option>Digital Marketing</option>
+
+                    <option>App Development</option>
+
+                </select>
 
 
-</form>
+                <textarea rows="6"
+                    placeholder="Write your message here..."
+                    required></textarea>
 
 
+                <button type="submit" class="btn primary-btn">
+                    Send Message
+                </button>
 
-</section>
+            </form>
 
+        </div>
 
-
-
-<footer>
-
-<p>
-© 2025 EduTech Institute
-</p>
-
-</footer>
+    </section>
 
 
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        <div class="footer-content">
+
+            <div class="footer-box">
+
+                <a href="index.html" class="logo">
+
+                    <i class="fa-solid fa-graduation-cap"></i>
+
+                    Edu<span>Tech</span>
+
+                </a>
+
+                <p>
+                    Your future starts with the right education.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            <p>
+                © 2026 EduTech Institute. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
 
 </body>
 
