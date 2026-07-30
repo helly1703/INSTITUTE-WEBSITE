@@ -1,47 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact | EduTech Institute</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - EduTech Institute</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-  <div class="logo">🎓 EduTech Institute</div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="courses.html">Courses</a>
-    <a href="gallery.html">Gallery</a>
-    <a class="active" href="contact.html">Contact</a>
-  </nav>
-</header>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM3.82 9L12 4.54 20.18 9 12 13.46 3.82 9zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+                <span>EduTech Institute</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="contact.html" class="btn btn-primary">Apply Now</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<section class="page-banner">
-  <h1>Contact Us</h1>
-  <p>We would love to hear from you.</p>
-</section>
+    <div class="page-title">
+        <h1>Admission & Contact Us</h1>
+        <p>Fill out the application form below and our admissions team will contact you.</p>
+    </div>
 
-<section>
-  <form>
-    <label>Your Name</label>
-    <input type="text" placeholder="Enter your name" required>
+    <main class="container">
+        <div class="form-container">
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" placeholder="Enter your full name" required>
+                </div>
 
-    <label>Email Address</label>
-    <input type="email" placeholder="Enter your email" required>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
 
-    <label>Your Message</label>
-    <textarea placeholder="Write your message here..." required></textarea>
+                <div class="form-group">
+                    <label for="course">Interested Course</label>
+                    <select id="course" required>
+                        <option value="">-- Select a Course --</option>
+                        <option value="frontend">Frontend Web Development</option>
+                        <option value="datascience">Data Science & Analytics</option>
+                        <option value="uiux">UI/UX Product Design</option>
+                    </select>
+                </div>
 
-    <button class="btn" type="submit">Send Message</button>
-  </form>
-</section>
+                <div class="form-group">
+                    <label for="message">Message / Query</label>
+                    <textarea id="message" rows="4" placeholder="Enter your message here..."></textarea>
+                </div>
 
-<footer>
-  <p>© 2026 EduTech Institute | All Rights Reserved</p>
-</footer>
+                <button type="submit" class="btn btn-primary btn-block">Submit Application</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 EduTech Institute. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Form Working Action
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const userName = document.getElementById('name').value;
+            alert(`Thank you ${userName}! Your application has been submitted successfully.`);
+            this.reset();
+        });
+    </script>
 
 </body>
 </html>
