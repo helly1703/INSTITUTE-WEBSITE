@@ -1,80 +1,855 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - EduTech Institute</title>
-    <link rel="stylesheet" href="style.css">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Courses | EduTech Institute</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
 </head>
+
 <body>
 
-    <header>
-        <nav>
-            <a href="index.html" class="logo">
-                <svg class="logo-icon" viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM3.82 9L12 4.54 20.18 9 12 13.46 3.82 9zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
-                <span>EduTech Institute</span>
-            </a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="courses.html">Courses</a></li>
-                <li><a href="contact.html" class="active">Contact</a></li>
-                <li><a href="contact.html" class="btn btn-primary">Apply Now</a></li>
-            </ul>
-        </nav>
-    </header>
+<!--========== HEADER ==========-->
 
-    <div class="page-title">
-        <h1>Admission & Contact Us</h1>
-        <p>Fill out the application form below and our admissions team will contact you.</p>
+<header>
+
+<nav class="navbar">
+
+<div class="logo">
+
+<i class="fa-solid fa-graduation-cap"></i>
+
+<h2>EduTech Institute</h2>
+
+</div>
+
+<ul class="nav-menu">
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="about.html">About</a></li>
+
+<li><a href="courses.html" class="active">Courses</a></li>
+
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+<a href="contact.html" class="btn">Apply Now</a>
+
+</nav>
+
+</header>
+
+
+
+<!--========== HERO ==========-->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<span class="tagline">
+
+OUR COURSES
+
+</span>
+
+<h1>
+
+Upgrade Your
+
+<span>Skills</span>
+
+</h1>
+
+<p>
+
+Choose from our professional courses
+designed by experienced faculty to
+help you become industry ready.
+
+</p>
+
+<a href="#courses" class="btn">
+
+Explore Courses
+
+</a>
+
+</div>
+
+<div class="hero-image">
+
+<img src="image3.webp" alt="Programming">
+
+</div>
+
+</section>
+
+
+
+<!--========== COURSE INTRO ==========-->
+
+<section class="about">
+
+<div class="about-image">
+
+<img src="image2.jpg" alt="Students">
+
+</div>
+
+<div class="about-content">
+
+<span class="section-tag">
+
+WHY OUR COURSES
+
+</span>
+
+<h2>
+
+Industry Ready Learning
+
+</h2>
+
+<p>
+
+Our courses combine theoretical
+knowledge with practical training,
+real projects, and career guidance
+to prepare students for today's
+technology industry.
+
+</p>
+
+<div class="about-list">
+
+<div>
+
+<i class="fa-solid fa-circle-check"></i>
+
+Practical Training
+
+</div>
+
+<div>
+
+<i class="fa-solid fa-circle-check"></i>
+
+Experienced Faculty
+
+</div>
+
+<div>
+
+<i class="fa-solid fa-circle-check"></i>
+
+Latest Syllabus
+
+</div>
+
+<div>
+
+<i class="fa-solid fa-circle-check"></i>
+
+Certificate Courses
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<!--==================== OUR COURSES ====================-->
+
+<section class="courses" id="courses">
+
+    <div class="section-title">
+
+        <span>POPULAR COURSES</span>
+
+        <h2>Choose Your Career Path</h2>
+
+        <p>
+
+            Learn from industry experts through
+            practical projects and hands-on training.
+
+        </p>
+
     </div>
 
-    <main class="container">
-        <div class="form-container">
-            <form id="contactForm">
-                <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" placeholder="Enter your full name" required>
-                </div>
+    <div class="course-container">
 
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" placeholder="Enter your email" required>
-                </div>
+        <!-- Course 1 -->
 
-                <div class="form-group">
-                    <label for="course">Interested Course</label>
-                    <select id="course" required>
-                        <option value="">-- Select a Course --</option>
-                        <option value="frontend">Frontend Web Development</option>
-                        <option value="datascience">Data Science & Analytics</option>
-                        <option value="uiux">UI/UX Product Design</option>
-                    </select>
-                </div>
+        <div class="course-card">
 
-                <div class="form-group">
-                    <label for="message">Message / Query</label>
-                    <textarea id="message" rows="4" placeholder="Enter your message here..."></textarea>
-                </div>
+            <img src="image3.webp" alt="Web Development">
 
-                <button type="submit" class="btn btn-primary btn-block">Submit Application</button>
-            </form>
+            <div class="course-content">
+
+                <h3>Web Development</h3>
+
+                <p>
+
+                    Learn HTML, CSS, JavaScript,
+                    Bootstrap, PHP and build
+                    responsive websites.
+
+                </p>
+
+                <a href="contact.html" class="course-btn">
+
+                    Enroll Now →
+
+                </a>
+
+            </div>
+
         </div>
-    </main>
 
-    <footer>
-        <p>&copy; 2026 EduTech Institute. All Rights Reserved.</p>
-    </footer>
 
-    <script>
-        // Form Working Action
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const userName = document.getElementById('name').value;
-            alert(`Thank you ${userName}! Your application has been submitted successfully.`);
-            this.reset();
-        });
-    </script>
+
+        <!-- Course 2 -->
+
+        <div class="course-card">
+
+            <img src="image4.avif" alt="Java Programming">
+
+            <div class="course-content">
+
+                <h3>Java Programming</h3>
+
+                <p>
+
+                    Master Java fundamentals,
+                    OOP concepts and build
+                    real-world applications.
+
+                </p>
+
+                <a href="contact.html" class="course-btn">
+
+                    Enroll Now →
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Course 3 -->
+
+        <div class="course-card">
+
+            <img src="image5.avif" alt="Python">
+
+            <div class="course-content">
+
+                <h3>Python Programming</h3>
+
+                <p>
+
+                    Learn Python from basics to
+                    advanced programming with
+                    practical coding exercises.
+
+                </p>
+
+                <a href="contact.html" class="course-btn">
+
+                    Enroll Now →
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Course 4 -->
+
+        <div class="course-card">
+
+            <img src="image2.jpg" alt="Digital Marketing">
+
+            <div class="course-content">
+
+                <h3>Digital Marketing</h3>
+
+                <p>
+
+                    Learn SEO, Google Ads,
+                    Social Media Marketing
+                    and Branding strategies.
+
+                </p>
+
+                <a href="contact.html" class="course-btn">
+
+                    Enroll Now →
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Course 5 -->
+
+        <div class="course-card">
+
+            <img src="hero.jpg" alt="Computer Basics">
+
+            <div class="course-content">
+
+                <h3>Computer Basics</h3>
+
+                <p>
+
+                    Learn MS Office, Internet,
+                    Email, Windows and essential
+                    computer skills.
+
+                </p>
+
+                <a href="contact.html" class="course-btn">
+
+                    Enroll Now →
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Course 6 -->
+
+        <div class="course-card">
+
+            <img src="image3.webp" alt="C Programming">
+
+            <div class="course-content">
+
+                <h3>C Programming</h3>
+
+                <p>
+
+                    Understand programming logic,
+                    functions, arrays, pointers
+                    and problem-solving.
+
+                </p>
+
+                <a href="contact.html" class="course-btn">
+
+                    Enroll Now →
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!--==================== WHY STUDY WITH US ====================-->
+
+<section class="features">
+
+    <div class="section-title">
+
+        <span>OUR ADVANTAGES</span>
+
+        <h2>Why Study With Us?</h2>
+
+    </div>
+
+    <div class="feature-container">
+
+        <div class="feature-card">
+
+            <i class="fa-solid fa-chalkboard-user"></i>
+
+            <h3>Expert Trainers</h3>
+
+            <p>
+
+                Learn from experienced faculty
+                with industry knowledge.
+
+            </p>
+
+        </div>
+
+        <div class="feature-card">
+
+            <i class="fa-solid fa-laptop-code"></i>
+
+            <h3>Practical Projects</h3>
+
+            <p>
+
+                Work on live projects to gain
+                real-world experience.
+
+            </p>
+
+        </div>
+
+        <div class="feature-card">
+
+            <i class="fa-solid fa-award"></i>
+
+            <h3>Certification</h3>
+
+            <p>
+
+                Receive certificates after
+                successful course completion.
+
+            </p>
+
+        </div>
+
+        <div class="feature-card">
+
+            <i class="fa-solid fa-briefcase"></i>
+
+            <h3>Placement Support</h3>
+
+            <p>
+
+                Career guidance and placement
+                assistance for students.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+<!--==================== COURSE BENEFITS ====================-->
+
+<section class="about">
+
+    <div class="about-image">
+
+        <img src="image4.avif" alt="Course Benefits">
+
+    </div>
+
+    <div class="about-content">
+
+        <span class="section-tag">
+
+            COURSE BENEFITS
+
+        </span>
+
+        <h2>
+
+            Learn Skills That Build Your Career
+
+        </h2>
+
+        <p>
+
+            Our courses are designed to help students gain
+            practical knowledge, improve technical skills,
+            and prepare for real-world jobs through
+            hands-on learning and expert guidance.
+
+        </p>
+
+        <div class="about-list">
+
+            <div>
+
+                <i class="fa-solid fa-circle-check"></i>
+
+                Live Practical Sessions
+
+            </div>
+
+            <div>
+
+                <i class="fa-solid fa-circle-check"></i>
+
+                Industry Based Projects
+
+            </div>
+
+            <div>
+
+                <i class="fa-solid fa-circle-check"></i>
+
+                Internship Guidance
+
+            </div>
+
+            <div>
+
+                <i class="fa-solid fa-circle-check"></i>
+
+                Placement Assistance
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!--==================== TRAINING STATISTICS ====================-->
+
+<section class="counter">
+
+    <div class="counter-box">
+
+        <h2>35+</h2>
+
+        <p>Professional Courses</p>
+
+    </div>
+
+    <div class="counter-box">
+
+        <h2>5000+</h2>
+
+        <p>Students Trained</p>
+
+    </div>
+
+    <div class="counter-box">
+
+        <h2>120+</h2>
+
+        <p>Expert Trainers</p>
+
+    </div>
+
+    <div class="counter-box">
+
+        <h2>98%</h2>
+
+        <p>Placement Success</p>
+
+    </div>
+
+</section>
+
+
+
+<!--==================== COURSE GALLERY ====================-->
+
+<section class="gallery">
+
+    <div class="section-title">
+
+        <span>TRAINING GALLERY</span>
+
+        <h2>Learning Environment</h2>
+
+        <p>
+
+            Practical training sessions,
+            workshops and classroom activities.
+
+        </p>
+
+    </div>
+
+    <div class="gallery-container">
+
+        <div class="gallery-item">
+
+            <img src="hero.jpg" alt="Institute">
+
+        </div>
+
+        <div class="gallery-item">
+
+            <img src="image2.jpg" alt="Students">
+
+        </div>
+
+        <div class="gallery-item">
+
+            <img src="image3.webp" alt="Programming">
+
+        </div>
+
+        <div class="gallery-item">
+
+            <img src="image4.avif" alt="Lab">
+
+        </div>
+
+        <div class="gallery-item">
+
+            <img src="image5.avif" alt="Workshop">
+
+        </div>
+
+        <div class="gallery-item">
+
+            <img src="image3.webp" alt="Coding">
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!--==================== STUDENT REVIEWS ====================-->
+
+<section class="testimonial">
+
+    <div class="section-title">
+
+        <span>STUDENT REVIEWS</span>
+
+        <h2>What Our Students Say</h2>
+
+        <p>
+
+            Our students share their learning
+            experience after completing our courses.
+
+        </p>
+
+    </div>
+
+    <div class="testimonial-container">
+
+        <div class="testimonial-card">
+
+            <p>
+
+                "Excellent practical sessions and
+                supportive teachers. I improved my
+                coding skills significantly."
+
+            </p>
+
+            <h3>Rahul Patel</h3>
+
+            <span>Web Development Student</span>
+
+        </div>
+
+        <div class="testimonial-card">
+
+            <p>
+
+                "The courses are well structured and
+                helped me prepare for interviews."
+
+            </p>
+
+            <h3>Priya Shah</h3>
+
+            <span>Java Student</span>
+
+        </div>
+
+        <div class="testimonial-card">
+
+            <p>
+
+                "Best institute for beginners who
+                want to start a career in IT."
+
+            </p>
+
+            <h3>Aman Verma</h3>
+
+            <span>Python Student</span>
+
+        </div>
+
+    </div>
+
+</section>
+<!--==================== CALL TO ACTION ====================-->
+
+<section class="cta">
+
+    <div class="cta-content">
+
+        <h2>
+
+            Start Your Professional Journey Today
+
+        </h2>
+
+        <p>
+
+            Join EduTech Institute and gain practical skills,
+            industry knowledge, and certification to build
+            a successful career in the IT field.
+
+        </p>
+
+        <a href="contact.html" class="btn">
+
+            Enroll Now
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!--==================== FOOTER ====================-->
+
+<footer>
+
+    <div class="footer-container">
+
+        <div class="footer-col">
+
+            <h2>EduTech Institute</h2>
+
+            <p>
+
+                EduTech Institute provides quality education,
+                practical learning, and career-oriented
+                training to help students achieve success.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="footer-col">
+
+            <h3>Quick Links</h3>
+
+            <a href="index.html">Home</a>
+
+            <a href="about.html">About</a>
+
+            <a href="courses.html">Courses</a>
+
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+
+
+        <div class="footer-col">
+
+            <h3>Our Courses</h3>
+
+            <a href="#">Web Development</a>
+
+            <a href="#">Java Programming</a>
+
+            <a href="#">Python Programming</a>
+
+            <a href="#">Digital Marketing</a>
+
+            <a href="#">Computer Basics</a>
+
+        </div>
+
+
+
+        <div class="footer-col">
+
+            <h3>Contact Us</h3>
+
+            <p>
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                Ahmedabad, Gujarat, India
+
+            </p>
+
+            <p>
+
+                <i class="fa-solid fa-phone"></i>
+
+                +91 98765 43210
+
+            </p>
+
+            <p>
+
+                <i class="fa-solid fa-envelope"></i>
+
+                info@edutechinstitute.com
+
+            </p>
+
+            <div class="social-icons">
+
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+
+                <a href="#"><i class="fab fa-instagram"></i></a>
+
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+
+                <a href="#"><i class="fab fa-x-twitter"></i></a>
+
+                <a href="#"><i class="fab fa-youtube"></i></a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="footer-bottom">
+
+        <p>
+
+            © 2026 EduTech Institute. All Rights Reserved.
+
+        </p>
+
+    </div>
+
+</footer>
 
 </body>
+
 </html>
